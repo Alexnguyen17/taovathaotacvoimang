@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+    </style>
+</head>
+<h2>Sample Screen</h2>
+<body>
+<input type="text" id="txtValue"/>
+<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<div id="result"></div>
+
+<script>
+    var X = 0;
+    var  array =Array();
+
+    function add_element_to_array() {
+        array[X] = document.getElementById("txtValue").value;
+        alert("Element: " + array[X] + "ADDED AT INDEX " + X);
+        X++;
+        document.getElementById("txtValue ").value = "";
+    }
+
+    function display_array() {
+        var  e ="<hr/>";
+        for (var i=0; i<array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+
+</script>
+
+</body>
+</html>
